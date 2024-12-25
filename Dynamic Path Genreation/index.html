@@ -13,6 +13,7 @@
         <option value="movePoints">Move Points</option>
         <option value="dragPoints">Drag Points</option>
         <option value="joinPoints">Join Points</option>
+        <option value="quadraticCurve">Quadratic Curve</option>
       </select>
     </div>
     <svg
@@ -22,6 +23,21 @@
       id="svg-main-container"
       class="svg-container"
     >
+      <defs>
+        <filter id="filter-path-glow-effect">
+          <feMorphology
+            in="SourceGraphic"
+            operator="dilate"
+            radius="1"
+            result="dilated"
+          ></feMorphology>
+          <feGaussianBlur stdDeviation="3" in="dilated" result="blue" />
+          <feMerge>
+            <feMergeNode in="blur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
       <!-- Horizontal guide lines -->
       <path stroke="red" stroke-width=".2" d="M0 10 H 100" />
       <path stroke="red" stroke-width=".2" d="M0 20 H 100" />

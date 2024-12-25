@@ -12,6 +12,7 @@ let endPointDetail = {};
 let mouseMoveDetail = {};
 let pathDrawAnimationStarted = false;
 let currentPathConstructed = "";
+let tempPoint = "";
 
 // points predefined data
 const pointRadius = 1;
@@ -52,10 +53,18 @@ const svgClickHandler = (e) => {
 
 const reorderAfterJoinPaths = () => {
   const circles = document.querySelectorAll(".guide-points");
-  console.log(circles);
   circles.forEach((item) => {
+    item.setAttribute("stroke", pointStrokeColor);
     svgMainConainer.appendChild(item);
   });
+};
+
+const handleSelectedPath = (e) => {
+  if (currentAction == "quadraticCurve") {
+    e.target.setAttribute("filter", "url(#filter-path-glow-effect)");
+    const pathDetail=pathTracker.find(path=>path.id=e.target.id);
+    
+  }
 };
 
 const pointClickHandler = (e) => {
@@ -73,8 +82,14 @@ const pointClickHandler = (e) => {
       );
       currentPathConstructed.setAttribute("stroke", pathStrokeColor);
       currentPathConstructed.setAttribute("fill", "none");
+      currentPathConstructed.setAttribute(
+        "class",
+        `path-line-${pathTracker.length}`
+      );
+      currentPathConstructed.setAttribute("id",`path-line-identifier-${pathTracker.length}`)
+      currentPathConstructed.addEventListener("click", handleSelectedPath);
+      svgMainConainer.appendChild(currentPathConstructed);
     }
-    svgMainConainer.appendChild(currentPathConstructed);
     if (!isPointSelected) {
       isPointSelected = true;
       startPointDetail = { x: cx, y: cy };
@@ -84,6 +99,11 @@ const pointClickHandler = (e) => {
       isPointSelected = false;
       svgMainConainer.removeEventListener("mousemove", drawJoinPaths);
       drawJoinPaths({ offsetX: cx, offsetY: cy, preventNormalize: true });
+      pathTracker.push({
+        start: { x: startPointDetail.x, y: startPointDetail.y },
+        end: { x: cx, y: cy },
+        id: currentPathConstructed.id,
+      });
       currentPathConstructed = null;
       reorderAfterJoinPaths();
     }

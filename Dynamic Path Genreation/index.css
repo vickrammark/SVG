@@ -20,9 +20,12 @@
 body {
   background-color: #4335a7;
 }
-.guide-points{
+.guide-points {
   z-index: 10;
 }
-.current-path{
+.current-path {
   z-index: 9;
+}
+[class^="path-line-"]:hover {
+  filter: url(#filter-path-glow-effect);
 }
