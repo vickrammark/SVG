@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="action-modal">
+      <select class="action-selector" id="id-action-selector">
+        <option value="addPoints">Add Points</option>
+        <option value="movePoints">Move Points</option>
+        <option value="dragPoints">Drag Points</option>
+        <option value="joinPoints">Join Points</option>
+      </select>
+    </div>
+    <svg
+      viewBox="0 0 100 100"
+      width="70%"
+      height="70%"
+      id="svg-main-container"
+      class="svg-container"
+    >
+      <!-- Horizontal guide lines -->
+      <path stroke="red" stroke-width=".2" d="M0 10 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 20 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 30 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 40 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 50 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 60 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 70 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 80 H 100" />
+      <path stroke="red" stroke-width=".2" d="M0 90 H 100" />
+
+      <!-- vertical guide lines -->
+      <path stroke="red" stroke-width=".2" d="M 10 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 20 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 30 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 40 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 50 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 60 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 70 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 80 0 V 100" />
+      <path stroke="red" stroke-width=".2" d="M 90 0 V 100" />
+    </svg>
+    <script src="./index.js"></script>
+  </body>
+</html>
