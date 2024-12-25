@@ -1,0 +1,8 @@
+#arc{
+    stroke-dashoffset:77;
+    stroke-dasharray: 77;
+}
+#arcLength{
+    height: 20px;
+    border: 1px solid blue;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+          margin: 0;
+          font-family:'Prompt', sans-serif;
+          color: white;
+          background: #202731;
+          overflow-x: hidden;
+      }
+      section{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 400px;
+          padding: 100px 20vw;
+      }
+      .blue{
+          background-color: #3c31dd;
+      }
+      .red{
+          background-color: #dd3f31;
+      }
+      .pink{
+          background-color: #ff0066;
+      }
+      .dark{
+          background-color: #0f0f10;
+      }
+      .curve{
+          position: absolute;
+          height: 225px;
+          width:100% ;
+          bottom: 0;
+      }
+      .curve::before{
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: #202731;
+        transform: translate(85%,60%);
+
+      }
+      .curve::after{
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        transform: translate(-4%,40%);
+        background-color: #3c31dd;
+        z-index: -1;
+      }
+      .bubble::after{
+        content: "";
+        border-top-left-radius: 50% 100%;
+        border-top-right-radius: 50% 100%;
+        bottom: 0;
+        position: absolute;
+        height: 85%;
+        width: 100%;
+        background-color: #0f0f10;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="blue">
+      <h1>Nice Curves</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio nihil
+        ipsa eius rem, velit totam ullam, numquam iure tenetur nam delectus
+        laudantium, minima aliquid earum dolore. Labore aliquam rerum ex!
+      </p>
+      <div class="curve"></div>
+    </section>
+
+    <section class="bubble">
+      <h1>Nice Curves</h1>
+      <p>
+        Voluptatibus placeat laborum quae, rerum molestiae illum quod
+        reprehenderit soluta ex cupiditate quam temporibus minus, totam ea natus
+        maxime ipsum! Obcaecati voluptatibus, aliquid perspiciatis consectetur
+        sunt et placeat odit ipsum?
+      </p>
+    </section>
+    <section class="dark">
+      <h1>Nice Curves</h1>
+      <p>
+        Minima quo, ea facere sapiente tenetur laborum neque, voluptas
+        necessitatibus quod recusandae quia. Nostrum reprehenderit rerum
+        molestiae natus enim quis distinctio repellendus ea, sint earum
+        aspernatur veniam ullam esse dignissimos!
+      </p>
+    </section>
+    <section class="red">
+      <h1 style="z-index: 12;">Nice Curves</h1>
+      <svg
+        viewBox="0 0 130 130"
+        width="400"
+        heigt="400"
+        style="position:absolute;transform:translate(-50%,-50%); top:50%;left:50%;z-index: 11;"
+      >
+        <path
+          stroke="orange"
+          fill="orange"
+          stroke-width="2"
+          d="M 20 45 Q 20 15 50 25
+                     Q 70 10 90 25
+                     Q 130 30 115 60
+                     Q 135 80 115 100
+                     C 75 120 80 150 40 100
+                     Q 2 80 20 45"
+        >
+          <animate attributeName="d" values="M 20 45 Q 20 15 50 10 Q 70 10 90 25
+          Q 130 30 125 60 Q 135 80 115 100 C 75 120 80 120 40 100 Q -10 100 20
+          45;M 20 45 Q 20 15 50 25 Q 70 10 90 25 Q 130 30 115 60 Q 135 80 115
+          100 C 75 120 80 150 40 100 Q 2 80 20 45;M 20 45 Q 20 15 50 10 Q 70 10
+          90 25 Q 130 30 125 60 Q 135 80 115 100 C 75 120 80 120 40 100 Q -10
+          100 20 45" repeatCount="indefinite" dur="3s"/>
+        </path>
+      </svg>
+
+      <!-- <svg
+        viewBox="0 0 130 130"
+        width="400"
+        heigt="400"
+        style="border:1px solid white;position:absolute;transform:translate(-50%,-50%); top:120%;left:50%;z-index: 11;"
+      >
+        <path
+          stroke="orange"
+          fill="none"
+          stroke-width="2"
+          d="M 20 45 Q 20 15 50 10
+                     Q 70 10 90 25
+                     Q 130 30 125 60
+                     Q 135 80 115 100
+                     C 75 120 80 120 40 100
+                     Q -10 100 20 45"
+          ,
+        ></path>
+      </svg> -->
+
+      <p style="z-index: 12;">
+        Odit rem nihil eligendi libero reiciendis eveniet magnam explicabo
+        labore eius, beatae delectus sed mollitia ex harum quo quas
+        exercitationem ut tempora eos esse earum expedita suscipit quod
+        perspiciatis. Aliquam!
+      </p>
+    </section>
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Perferendis ab ducimus, maiores repellat pariatur autem quos architecto
+        totam necessitatibus deleniti voluptas voluptates perspiciatis vitae non
+        excepturi. Asperiores doloribus recusandae ipsum itaque ea tempore cum
+        rem atque saepe. Assumenda.
+      </p>
+    </section>
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Facere molestiae pariatur suscipit recusandae laboriosam sit ea,
+        molestias aut quidem unde temporibus earum aperiam? Doloremque quam ex
+        hic illum neque! Autem suscipit quis vel aspernatur aliquid labore
+        necessitatibus reiciendis.
+      </p>
+    </section>
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Repellendus, labore amet autem dolorum repudiandae a alias rerum
+        facilis. Et dolor pariatur atque, quae similique dolorem eaque suscipit
+        numquam odit modi quidem quam iste, dolore laudantium reprehenderit
+        placeat beatae?
+      </p>
+    </section>
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Ipsum, non! Aperiam nemo ut quidem laboriosam eum perspiciatis repellat
+        quas facere non! Nesciunt, sequi natus autem obcaecati quibusdam rem
+        harum, alias debitis vitae non rerum commodi error sit culpa.
+      </p>
+    </section>
+  </body>
+</html>

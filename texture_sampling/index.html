@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <svg
+      width="600px"
+      height="300px"
+      viewBox="0 0 600 300"
+      style="border:1px solid red"
+    >
+      <defs>
+        <filter id="texture1" x="-50%" y="-50%" width="200%" height="200%">
+          <feImage
+            href="./grass.jpeg"
+            x="0"
+            y="0"
+            preserveAspectRatio="none"
+            width="600"
+            height="300"
+            result="bg"
+          ></feImage>
+          <feColorMatrix in="bg" type="saturate" values="0" result="image" />
+          <feGaussianBlur
+            in="image"
+            stdDeviation="0.5"
+            result="map"
+          ></feGaussianBlur>
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="map"
+            scale="15"
+            xChannelSelector="R"
+            yChannelSelector="R"
+            result="Texture_text"
+          >
+            <animate
+              attributeName="scale"
+              values="15;7;0"
+              repeatCount="indefinite"
+              dur="3s"
+            />
+          </feDisplacementMap>
+          <feColorMatrix
+            in="Texture_text"
+            result="Texture_text_2"
+            type="matrix"
+            values="1 0 0 0 0 
+                0 1 0 0 0 
+                0 0 1 0 0 
+                0 0 0 .9 0"
+          />
+          <feImage
+            href="./grass.jpeg"
+            x="0"
+            y="0"
+            preserveAspectRatio="none"
+            width="100%"
+            height="100%"
+            result="bg2"
+          ></feImage>
+          <feBlend
+            in="bg2"
+            in2="Texture_text_2"
+            mode="multiply"
+            result="blend"
+          ></feBlend>
+          <feMerge>
+            <feMergeNode in="bg2" />
+            <feMergeNode in="blend" />
+          </feMerge>
+        </filter>
+      </defs>
+      <text
+        x="40"
+        y="80"
+        style="font-weight:800;font-size:80px;letter-spacing:10px"
+        filter="url(#texture1)"
+      >
+        HELLO
+      </text>
+    </svg>
+
+    <script src="" async defer></script>
+  </body>
+</html>

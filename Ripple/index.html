@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Define the filter -->
+        <filter id="filter-ripple-2">
+          <!-- Ripple texture -->
+          <feImage xlink:href="./img/ripple.png" x="150" y="AAAA0" result="ripple">
+            <!-- <animate attributeName="x" from="150" to="-250" dur="2s" repeatCount="indefinite" /> -->
+            <!-- <animate attributeName="y" from="-150" to="-250" dur="2s" repeatCount="indefinite" /> -->
+            <animate attributeName="width" from="0" to="1000" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="hieght" from="0" to="1000" dur="2s" repeatCount="indefinite" />
+          </feImage>
+          
+          <!-- Displacement map -->
+          <feDisplacementMap 
+            xChannelSelector="R" 
+            yChannelSelector="G" 
+            color-interpolation-filters="sRGB" 
+            in="SourceGraphic" 
+            in2="ripple" 
+            scale="0" 
+            result="dm">
+            <!-- Animate the scale to create ripple motion -->
+            <animate attributeName="scale" values="0;30;0" dur="5s" repeatCount="indefinite" />
+          </feDisplacementMap>
+          
+          <!-- Restrict effect -->
+          <feComposite operator="in" in2="ripple"></feComposite>
+          <feComposite in2="SourceGraphic"></feComposite>
+        </filter>
+      
+        <!-- Apply the filter to an image -->
+        <image
+        id="image-el"
+        xlink:href="https://images.unsplash.com/photo-1546207438-5685e45838d7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        filter="url(#filter-ripple-2)"
+      ></image>
+      </svg>
+    <script src="./index.js" />
+    
+  </body>
+</html>

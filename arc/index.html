@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+<body>
+    <input type="range" min="0" max="77" id="range"/>
+    <input type="number" id="number" min="0" value="0" max="77"/>
+    <div id="arcLength"></div>
+    <svg style="border:1px solid red" viewBox="0 0 50 50">
+        <path id="arc" stroke="green" stroke-width=".2" fill="none" d="M10 17 A5 5 0 0 1 40 17 "/>
+        <text x="30" y="17" text-anchor="middle" alignment-baseline="central">0%</text>
+    </svg>
+    <script src="./index.js"></script>
+</body>
+</html>
